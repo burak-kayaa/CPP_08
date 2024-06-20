@@ -25,11 +25,13 @@ void Span::addNumber(int n)
 	_v.push_back(n);
 }
 
-void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void	Span::addNumber(unsigned int range, time_t seed)
 {
-	if (_v.size() + std::distance(begin, end) > _n)
+	if (_v.size() + range > _n)
 		throw Span::FullSpanException();
-	_v.insert(_v.end(), begin, end);
+	srand(seed);
+	for (unsigned int i = 0; i < range; i++)
+		_v.push_back(rand());
 }
 
 int Span::shortestSpan()

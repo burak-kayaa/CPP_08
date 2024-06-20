@@ -19,7 +19,7 @@ class Span
 		~Span();
 
 		void addNumber(int n);
-		void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		void addNumber(unsigned int range, time_t seed);
 		int shortestSpan();
 		int longestSpan();
 		class FullSpanException : public std::exception

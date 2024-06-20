@@ -9,8 +9,14 @@ int	main(void)
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
-	// void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	// use this method to add a range of numbers
+	try
+	{
+		sp.addNumber(6, 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	return 0;
